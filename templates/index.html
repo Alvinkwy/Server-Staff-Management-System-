@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.75">
+    <title>Part Time Management System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sofia+Sans+SemiCondensed:ital,wght@0,200..700;1,300..400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body data-error="{% if error %}{{ error }}{% endif %}">
+    <section class="header">
+        <nav>
+            <a href="/"><img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Logo"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="#" onclick="alert('Contact page coming soon!')">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="text-box">
+            <h1>Welcome to The Part Timer Management System</h1>
+            <p>Malaysia's best Staff Management System <br>Please login and prove that you're one of us</p>
+
+            <div class="login-container">
+                <form action="/login" method="POST">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+
+                    <div class="button-row">
+                        <button type="submit" class="login-btn">Login</button>
+                        <button type="button" class="create-btn" onclick="alert('Create account feature coming soon!')">
+                            Create Account
+                        </button>
+                    </div>
+                </form>
+
+                <a href="#" class="hero-btn" onclick="alert('Contact admin for reset.')">Forgot Password?</a>
+                <a href="#" class="hero-btn" onclick="alert('Contact page coming soon!')">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const error = document.body.getAttribute('data-error');
+            if (error === 'noaccount') alert('No account registered');
+            else if (error === 'wrongpassword') alert('Wrong password');
+            else if (error === 'dberror') alert('Database error - try again');
+        });
+    </script>
+</body>
+
+</html>
