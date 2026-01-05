@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-witdh, initial-scale=0.75">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:ital,wght@0,200;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="sub-header">
+       <nav>
+           <a href="/"><img src="{{ url_for('static', filename='images/logo2.png') }}"></a>
+           <div class="nav-links">
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/dashboardA">ADMIN</a></li>
+                    <li><a href="/dashboardM">MANAGER</a></li>
+                    <li><a href="/staff">STAFF</a></li>
+                    <li><a href="#" onclick="alert('Contact page coming soon!')">CONTACT</a></li>
+                    <li><a href="/logout">LOGOUT</a></li>
+                </ul>
+           </div>
+       </nav>
+    <h1>Welcome, {{ full_name or "Admin" }}</h1>
+    <p>Role: {{ role or "Administrator" }} | Username: {{ username or "admin" }}</p>
+    </section>
+
+    <section class="about-us">
+        <div class="row">
+            <div class="about-col">
+                <h1>Dashboard for Admin</h1>
+                <p>Welcome to the Admin Dashboard. Here you can manage all aspects of the website and monitor user interactions.</p>
+
+                <!-- This now goes to the CRUD page -->
+                <a href="/admin/staff" class="hero-btn border-btn">Staff Management</a>
+
+                <a href="#" class="hero-btn border-btn" onclick="alert('Shift Scheduling coming soon!')">Shift Scheduling</a>
+                <a href="#" class="hero-btn border-btn" onclick="alert('Security & Settings coming soon!')">Security & Settings</a>
+                <a href="#" class="hero-btn border-btn" onclick="alert('User Profiles coming soon!')">Access to All User Profiles</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="ending">
+        <p>Produced by full <i class="fa fa-heart-o"></i> by a FCI student</p>
+    </section>
+</body>

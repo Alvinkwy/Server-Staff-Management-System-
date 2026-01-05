@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.75">
+    <title>Manager Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Same font setup as other pages -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:ital,wght@0,200;0,600;0,700;1,300;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Same icons setup as other pages -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Logo">
+            </a>
+
+            <div class="nav-links">
+                <ul>
+                    <li><a href="{{ url_for('index') }}">HOME</a></li>
+                    <li><a href="{{ url_for('dashboardA') }}">ADMIN</a></li>
+                    <li><a href="{{ url_for('dashboardM') }}">MANAGER</a></li>
+                    <li><a href="{{ url_for('staff') }}">STAFF</a></li>
+                    <li><a href="{{ url_for('logout') }}">LOGOUT</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <h1>Welcome Manager</h1>
+    </section>
+
+    <!-- -------- Abt us Content -------- -->
+    <section class="about-us">
+        <div class="row">
+            <div class="about-col">
+                <h1>Dashboard for Manager</h1>
+                <p>
+                    Welcome to the Manager Dashboard. Here you can manage staff-related functions and monitor
+                    operations.
+                </p>
+
+                <!-- IMPORTANT: this must route to the new manager staff page -->
+                <a href="{{ url_for('manager_staff') }}" class="hero-btn border-btn">Staff Management</a>
+
+                <!-- placeholders for future pages -->
+                <a href="#" class="hero-btn border-btn">Shift Scheduling</a>
+                <a href="#" class="hero-btn border-btn">View Staff Profiles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- -------- Ending -------- -->
+    <section class="ending">
+        <p>Produced by <i class="fa fa-heart-o"></i> by a FCI student</p>
+    </section>
+</body>
+
+</html>
